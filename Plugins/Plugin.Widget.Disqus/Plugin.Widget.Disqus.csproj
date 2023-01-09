@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Frameworks\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj" />
+    <ProjectReference Include="..\..\Frameworks\Repository.Pattern\Repository.Pattern.csproj" />
+    <ProjectReference Include="..\..\Frameworks\Service.Pattern\Service.Pattern.csproj" />
+    <ProjectReference Include="..\..\WhatYouNeed.Core\Appli.Core.csproj" />
+    <ProjectReference Include="..\..\WhatYouNeed.Model\Appli.Model.csproj" />
+    <ProjectReference Include="..\..\WhatYouNeed.Service\Appli.Service.csproj" />
+  </ItemGroup>
+
+</Project>

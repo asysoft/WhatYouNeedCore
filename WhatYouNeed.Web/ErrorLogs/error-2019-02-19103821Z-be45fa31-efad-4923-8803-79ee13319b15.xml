@@ -1,0 +1,258 @@
+﻿<error errorId="be45fa31-efad-4923-8803-79ee13319b15" application="/LM/W3SVC/3/ROOT" host="HP-ASY" type="System.FormatException" message="Le format de la chaîne d'entrée est incorrect." source="mscorlib" detail="System.FormatException: Le format de la chaîne d'entrée est incorrect.&#xD;&#xA;   à System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer&amp; number, NumberFormatInfo info, Boolean parseDecimal)&#xD;&#xA;   à System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)&#xD;&#xA;   à System.Int32.Parse(String s)&#xD;&#xA;   à WhatYouNeed.Web.Controllers.AccountController.&lt;RegisterAccount&gt;d__27.MoveNext() dans C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\Controllers\AccountController.cs:ligne 349&#xD;&#xA;--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---&#xD;&#xA;   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()&#xD;&#xA;   à WhatYouNeed.Web.Controllers.AccountController.&lt;Register&gt;d__26.MoveNext() dans C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\Controllers\AccountController.cs:ligne 253&#xD;&#xA;--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---&#xD;&#xA;   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   à System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass8_0.&lt;BeginInvokeAsynchronousActionMethod&gt;b__1(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.&lt;&gt;c__DisplayClass11_0.&lt;InvokeActionMethodFilterAsynchronouslyRecursive&gt;b__0()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.&lt;&gt;c__DisplayClass11_2.&lt;InvokeActionMethodFilterAsynchronouslyRecursive&gt;b__2()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass7_0.&lt;BeginInvokeActionMethodWithFilters&gt;b__1(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass3_6.&lt;BeginInvokeAction&gt;b__4()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass3_1.&lt;BeginInvokeAction&gt;b__1(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Controller.&lt;&gt;c.&lt;BeginExecuteCore&gt;b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   à System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Controller.&lt;&gt;c.&lt;BeginExecute&gt;b__151_2(IAsyncResult asyncResult, Controller controller)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   à System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.MvcHandler.&lt;&gt;c.&lt;BeginProcessRequest&gt;b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   à System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)&#xD;&#xA;   à System.Web.HttpApplication.CallHandlerExecutionStep.InvokeEndHandler(IAsyncResult ar)&#xD;&#xA;   à System.Web.HttpApplication.CallHandlerExecutionStep.OnAsyncHandlerCompletion(IAsyncResult ar)" time="2019-02-19T10:38:21.3685267Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:no-cache&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_PRAGMA:no-cache&#xD;&#xA;HTTP_CONTENT_LENGTH:2878&#xD;&#xA;HTTP_CONTENT_TYPE:multipart/form-data; boundary=----WebKitFormBoundaryDfVQNes1AOrGJUK5&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7&#xD;&#xA;HTTP_COOKIE:i18n.langtag=fr; .ASPXANONYMOUS=mfV4YRiiKGy5CiVSlnckrJletoeLoTarlXR3Ef7hBI0pXAXerNasYNg9_Z3GUPThCJl9ZV3FOnBQhXufoLdd7yb3VlYvWWTJUyNqeJWyaHy8T9Ggr-SM_W2ykshc02LVdQG8WSbK2yg9KLKK7nty-g2; __RequestVerificationToken=uv4C3o0RU50hH3S7RwoUXgnGz5E3bBlVb6HsXiBYIord2ArpJ0my0hDSm5PECvUNmd4pCGV0dTPoR4WmVaOQ1Jnvh7UOuAe-pROvUnPwh681&#xD;&#xA;HTTP_HOST:localhost:58456&#xD;&#xA;HTTP_REFERER:http://localhost:58456/account/register&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36&#xD;&#xA;HTTP_ORIGIN:http://localhost:58456&#xD;&#xA;HTTP_UPGRADE_INSECURE_REQUESTS:1&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: no-cache&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Pragma: no-cache&#xD;&#xA;Content-Length: 2878&#xD;&#xA;Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryDfVQNes1AOrGJUK5&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7&#xD;&#xA;Cookie: i18n.langtag=fr; .ASPXANONYMOUS=mfV4YRiiKGy5CiVSlnckrJletoeLoTarlXR3Ef7hBI0pXAXerNasYNg9_Z3GUPThCJl9ZV3FOnBQhXufoLdd7yb3VlYvWWTJUyNqeJWyaHy8T9Ggr-SM_W2ykshc02LVdQG8WSbK2yg9KLKK7nty-g2; __RequestVerificationToken=uv4C3o0RU50hH3S7RwoUXgnGz5E3bBlVb6HsXiBYIord2ArpJ0my0hDSm5PECvUNmd4pCGV0dTPoR4WmVaOQ1Jnvh7UOuAe-pROvUnPwh681&#xD;&#xA;Host: localhost:58456&#xD;&#xA;Referer: http://localhost:58456/account/register&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36&#xD;&#xA;Origin: http://localhost:58456&#xD;&#xA;Upgrade-Insecure-Requests: 1&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/3/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="2878" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="multipart/form-data; boundary=----WebKitFormBoundaryDfVQNes1AOrGJUK5" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="3" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/3" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/account/register" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\account\register" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="60677" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/account/register" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="58456" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/account/register" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_PRAGMA">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="2878" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="multipart/form-data; boundary=----WebKitFormBoundaryDfVQNes1AOrGJUK5" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="i18n.langtag=fr; .ASPXANONYMOUS=mfV4YRiiKGy5CiVSlnckrJletoeLoTarlXR3Ef7hBI0pXAXerNasYNg9_Z3GUPThCJl9ZV3FOnBQhXufoLdd7yb3VlYvWWTJUyNqeJWyaHy8T9Ggr-SM_W2ykshc02LVdQG8WSbK2yg9KLKK7nty-g2; __RequestVerificationToken=uv4C3o0RU50hH3S7RwoUXgnGz5E3bBlVb6HsXiBYIord2ArpJ0my0hDSm5PECvUNmd4pCGV0dTPoR4WmVaOQ1Jnvh7UOuAe-pROvUnPwh681" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:58456" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:58456/account/register" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="http://localhost:58456" />
+    </item>
+    <item name="HTTP_UPGRADE_INSECURE_REQUESTS">
+      <value string="1" />
+    </item>
+  </serverVariables>
+  <form>
+    <item name="__RequestVerificationToken">
+      <value string="o3ULSTgJSzk2JfBFS33s5A3XwLyCBNAHBjNqXJiPh6u9HriXpsCEpu8zsBOHhR4O3VhYbVD7lsNFttcEe9w-B7kWDy0OMs3t90rkzAZrFaI1" />
+    </item>
+    <item name="UserType">
+      <value string="2" />
+    </item>
+    <item name="Email">
+      <value string="proasysoftddd@yahoo.com" />
+    </item>
+    <item name="Password">
+      <value string="TnTtest2018" />
+    </item>
+    <item name="ConfirmPassword">
+      <value string="TnTtest2018" />
+    </item>
+    <item name="ProCompany">
+      <value string="YourNamerer" />
+    </item>
+    <item name="ProCardNumber">
+      <value string="732469503" />
+    </item>
+    <item name="ProSiret">
+      <value string="" />
+    </item>
+    <item name="ProCategoryIDs">
+      <value string="ProCategoryIDs" />
+    </item>
+    <item name="ProAdress">
+      <value string="5 Blue Bay Link Road" />
+    </item>
+    <item name="ProTownZip">
+      <value string="95999 Cergy" />
+    </item>
+    <item name="LocSelectedName">
+      <value string="Bananes, ile Maurice" />
+    </item>
+    <item name="ProLocationRefID">
+      <value string="256" />
+    </item>
+    <item name="ProLongitudeStr">
+      <value string="57.58333330000005" />
+    </item>
+    <item name="ProLatitudeStr">
+      <value string="-20.3" />
+    </item>
+    <item name="ProPhone">
+      <value string="" />
+    </item>
+    <item name="ProEmail">
+      <value string="contact@yourname.com" />
+    </item>
+    <item name="ProSiteWeb">
+      <value string="www.yourcompany.com" />
+    </item>
+    <item name="Gender">
+      <value string="M" />
+    </item>
+    <item name="LastName">
+      <value string="Rabena" />
+    </item>
+    <item name="FirstName">
+      <value string="" />
+    </item>
+    <item name="PhoneNumber">
+      <value string="" />
+    </item>
+    <item name="TermsAndConditions">
+      <value string="true" />
+      <value string="false" />
+    </item>
+  </form>
+  <cookies>
+    <item name="i18n.langtag">
+      <value string="fr" />
+    </item>
+    <item name=".ASPXANONYMOUS">
+      <value string="mfV4YRiiKGy5CiVSlnckrJletoeLoTarlXR3Ef7hBI0pXAXerNasYNg9_Z3GUPThCJl9ZV3FOnBQhXufoLdd7yb3VlYvWWTJUyNqeJWyaHy8T9Ggr-SM_W2ykshc02LVdQG8WSbK2yg9KLKK7nty-g2" />
+    </item>
+    <item name="__RequestVerificationToken">
+      <value string="uv4C3o0RU50hH3S7RwoUXgnGz5E3bBlVb6HsXiBYIord2ArpJ0my0hDSm5PECvUNmd4pCGV0dTPoR4WmVaOQ1Jnvh7UOuAe-pROvUnPwh681" />
+    </item>
+  </cookies>
+</error>

@@ -1,0 +1,21 @@
+{
+  "DefaultCulture": "fr",
+  "Languages": [
+    {
+      "Culture": "fr",
+      "Enabled": true
+    },
+    {
+      "Culture": "en",
+      "Enabled": true
+    },
+    {
+      "Culture": "da",
+      "Enabled": false
+    },
+    {
+      "Culture": "it",
+      "Enabled": false
+    }
+  ]
+}

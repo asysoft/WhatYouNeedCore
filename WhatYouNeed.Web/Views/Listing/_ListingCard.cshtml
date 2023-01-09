@@ -1,0 +1,87 @@
+﻿@model WhatYouNeed.Web.Models.ListingItemModel
+
+<div class="card m-2">
+    <div class="card-header ">
+        <div class="container">
+            <div class="row d-flex " style="height:50px">
+                <div class="col col-md-12 align-content-center">
+                    
+                        @if (Model.ListingCurrent.Price.HasValue)
+                        {
+                        <div class="card-img-label border border-dark rounded-top font-weight-bold d-inline-block" style="border: 2px solid green;color:darkgreen; font-size:14px;">
+                            @Html.DisplayFor(x => Model.ListingCurrent.PriceFormatted)
+
+                            @*<span class="card-img-label border border-dark rounded-top font-weight-bold " style="border: 2px solid green;color:darkgreen">
+            @Html.DisplayFor(x => Model.ListingCurrent.PriceFormatted)
+        </span>*@
+                            @if (Model.ListingCurrent.OwnerUserType == Enum_UserType.Professional)
+                            {
+                                @*<i class="fa fa-star"></i>*@
+                                <div class="pull-right w-25">
+                                    <img src="@ImageHelper.GetCommunityImagePath("Pro_Star_Petit", "png")">
+
+                                </div>
+                            }
+                        </div>
+                        }
+
+                    </div>
+
+                </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="align-content-center">
+            <a href="@Url.Action("RedirectListingDetails", "Home", new { area="" , listingId = Model.ListingCurrent.ID, ownerUserType = @Model.ListingCurrent.OwnerUserType })">
+                <img class="card-img-top" alt="@Model.ListingCurrent.Title" src="@Model.UrlPicture">
+            </a>            
+
+            @*<div class="card-action">
+            <a href="@Url.Action("Listing", "Listing", new { id = Model.ListingCurrent.ID })"><i class="fa fa-map-marker"></i> @Model.ListingCurrent.LocationRef.Name - @Model.ListingCurrent.LocationRef.Description - @Model.ListingCurrent.Location</a>
+             </div>*@
+        </div>
+        <div>
+            <a href="@Url.Action("@strAction", "@strControlleur", new { area="@strArea" ,  id = Model.ListingCurrent.ID })">
+                <img class="avatar rounded-circle thumb-md pull-right" src="@WhatYouNeed.Web.Utilities.ImageHelper.GetUserProfileImagePath(Model.ListingCurrent.UserID)" />
+            </a>
+
+            <a href="@Url.Action("@strAction", "@strControlleur", new { area="@strArea" ,  id = Model.ListingCurrent.ID })">
+                <h5 class="card-title mt-3">@Model.ListingCurrent.Title</h5>
+
+                <p class="truncate">
+                    @Html.Raw(Model.ListingCurrent.Description)
+                </p>
+                <p>
+                    @*<span class="score @Model.ListingCurrent.RatingClass text-sm"></span> @Model.ListingCurrent.ListingReviews.Count [[[Reviews]]]*@
+                    <div class="form-group">
+                        @for (int i = 1; i <= 5; ++i)
+                        {
+                            if (i <= @Model.ListingCurrent.Rating)
+                            {
+                                <button type="button" class="btnrating btn btn-warning btn-sm">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </button>
+
+                            }
+                            else
+                            {
+                                <button type="button" class="btnrating btn btn-default btn-sm">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </button>
+
+                            }
+                        }
+                        
+                    </div>
+                    <div>
+                        <span class="text-sm"></span> @Model.ListingCurrent.ListingReviews.Count [[[Reviews]]]
+                    </div>
+                </p>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+

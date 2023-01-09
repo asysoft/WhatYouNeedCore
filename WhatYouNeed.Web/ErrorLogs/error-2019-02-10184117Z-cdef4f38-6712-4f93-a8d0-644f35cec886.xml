@@ -1,0 +1,240 @@
+﻿<error errorId="cdef4f38-6712-4f93-a8d0-644f35cec886" application="/LM/W3SVC/3/ROOT" host="HP-ASY" type="System.InvalidOperationException" message="La séquence ne contient aucun élément." source="System.Core" detail="System.InvalidOperationException: La séquence ne contient aucun élément.&#xD;&#xA;   à System.Linq.Enumerable.First[TSource](IEnumerable`1 source)&#xD;&#xA;   à WhatYouNeed.Web.Areas.Admin.Controllers.PrepaidCardController.&lt;&gt;c.&lt;GetSearchCardsByCriteria&gt;b__9_1(PrepaidCard x) dans C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\Areas\Admin\Controllers\PrepaidCardController.cs:ligne 187&#xD;&#xA;   à System.Linq.Enumerable.WhereListIterator`1.MoveNext()&#xD;&#xA;   à System.Linq.Enumerable.Count[TSource](IEnumerable`1 source)&#xD;&#xA;   à WhatYouNeed.Web.Areas.Admin.Controllers.PrepaidCardController.&lt;GetSearchCardsByCriteria&gt;d__9.MoveNext() dans C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\Areas\Admin\Controllers\PrepaidCardController.cs:ligne 190&#xD;&#xA;--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---&#xD;&#xA;   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()&#xD;&#xA;   à WhatYouNeed.Web.Areas.Admin.Controllers.PrepaidCardController.&lt;SearchCards&gt;d__7.MoveNext() dans C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\Areas\Admin\Controllers\PrepaidCardController.cs:ligne 127&#xD;&#xA;--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---&#xD;&#xA;   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   à System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass8_0.&lt;BeginInvokeAsynchronousActionMethod&gt;b__1(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.&lt;&gt;c__DisplayClass11_0.&lt;InvokeActionMethodFilterAsynchronouslyRecursive&gt;b__0()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.&lt;&gt;c__DisplayClass11_2.&lt;InvokeActionMethodFilterAsynchronouslyRecursive&gt;b__2()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass7_0.&lt;BeginInvokeActionMethodWithFilters&gt;b__1(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass3_6.&lt;BeginInvokeAction&gt;b__4()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass3_1.&lt;BeginInvokeAction&gt;b__1(IAsyncResult asyncResult)" user="asysoft@yahoo.com" time="2019-02-10T18:41:17.1779309Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:max-age=0&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_CONTENT_LENGTH:2482&#xD;&#xA;HTTP_CONTENT_TYPE:multipart/form-data; boundary=----WebKitFormBoundaryaMTip52SnMyKcBXX&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7&#xD;&#xA;HTTP_COOKIE:i18n.langtag=fr; .ASPXANONYMOUS=mfV4YRiiKGy5CiVSlnckrJletoeLoTarlXR3Ef7hBI0pXAXerNasYNg9_Z3GUPThCJl9ZV3FOnBQhXufoLdd7yb3VlYvWWTJUyNqeJWyaHy8T9Ggr-SM_W2ykshc02LVdQG8WSbK2yg9KLKK7nty-g2; __RequestVerificationToken=dlPYpqTh9Bp9Z1kI55BCH37GM9BMomUV4b75Yl2gyeGatAV_akbBhx6knQ39q0ltkfxo67I4eRWggkuNh80-tNpfmB1XJrP1UkBjhuK9aAs1; .AspNet.ApplicationCookie=iqILN6XkA2_iaztoZZ7H7TzVZuTOlovTunYrV84H74PaNe_0ZDJVxg_xX4pn1pWQAix_qVW8BhCwfd29LHBy7SMmoQXx1VwVjoBsBjH_n9KUNEF_XAf_JRqINdgFiieNev4wDcMxsPleUUoZqni-mAnskQh3-3N93FMOZ5ESxh4xtdqDZLtgQuQxVZ8YLeR9NQ-Q5G9vFnFqVy-RLSC47X-6LzZmz_PKvmhu-jca_5dSf36PhBd4V0WVb8DFfx2CtaN730LXl9YOwzq5EybGN_wNWgV0w4hnDcZ-PD8u92qdCsn-j9gUR10NLkeRtb1BzTGt1FCXU4g2htJCv-Y5vrrbXDcEDwuoQDDQ0qGzDy1sIPvls0A96ngS8vC9vRkPNizF8qrzzOF8A4FX4mR-bKVTyTfCi7AR_KC1U7DiRPjrEWE9cdPFKvo7Guh5DlfBfvnRhJ0NTlZTOkBBeYOVsoyENE61F-A3k3H0FIq-N_g-gQ5h0q84vUquXdd4YBe8CmBvKCYbXkXPdTeHMhdmlFxncCkmwnzKWyeAnWFiav4&#xD;&#xA;HTTP_HOST:localhost:58456&#xD;&#xA;HTTP_REFERER:http://localhost:58456/admin/prepaidcard/viewcards&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&#xD;&#xA;HTTP_ORIGIN:http://localhost:58456&#xD;&#xA;HTTP_UPGRADE_INSECURE_REQUESTS:1&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: max-age=0&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Content-Length: 2482&#xD;&#xA;Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryaMTip52SnMyKcBXX&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7&#xD;&#xA;Cookie: i18n.langtag=fr; .ASPXANONYMOUS=mfV4YRiiKGy5CiVSlnckrJletoeLoTarlXR3Ef7hBI0pXAXerNasYNg9_Z3GUPThCJl9ZV3FOnBQhXufoLdd7yb3VlYvWWTJUyNqeJWyaHy8T9Ggr-SM_W2ykshc02LVdQG8WSbK2yg9KLKK7nty-g2; __RequestVerificationToken=dlPYpqTh9Bp9Z1kI55BCH37GM9BMomUV4b75Yl2gyeGatAV_akbBhx6knQ39q0ltkfxo67I4eRWggkuNh80-tNpfmB1XJrP1UkBjhuK9aAs1; .AspNet.ApplicationCookie=iqILN6XkA2_iaztoZZ7H7TzVZuTOlovTunYrV84H74PaNe_0ZDJVxg_xX4pn1pWQAix_qVW8BhCwfd29LHBy7SMmoQXx1VwVjoBsBjH_n9KUNEF_XAf_JRqINdgFiieNev4wDcMxsPleUUoZqni-mAnskQh3-3N93FMOZ5ESxh4xtdqDZLtgQuQxVZ8YLeR9NQ-Q5G9vFnFqVy-RLSC47X-6LzZmz_PKvmhu-jca_5dSf36PhBd4V0WVb8DFfx2CtaN730LXl9YOwzq5EybGN_wNWgV0w4hnDcZ-PD8u92qdCsn-j9gUR10NLkeRtb1BzTGt1FCXU4g2htJCv-Y5vrrbXDcEDwuoQDDQ0qGzDy1sIPvls0A96ngS8vC9vRkPNizF8qrzzOF8A4FX4mR-bKVTyTfCi7AR_KC1U7DiRPjrEWE9cdPFKvo7Guh5DlfBfvnRhJ0NTlZTOkBBeYOVsoyENE61F-A3k3H0FIq-N_g-gQ5h0q84vUquXdd4YBe8CmBvKCYbXkXPdTeHMhdmlFxncCkmwnzKWyeAnWFiav4&#xD;&#xA;Host: localhost:58456&#xD;&#xA;Referer: http://localhost:58456/admin/prepaidcard/viewcards&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&#xD;&#xA;Origin: http://localhost:58456&#xD;&#xA;Upgrade-Insecure-Requests: 1&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/3/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="ApplicationCookie" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="asysoft@yahoo.com" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="asysoft@yahoo.com" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="asysoft@yahoo.com" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="2482" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="multipart/form-data; boundary=----WebKitFormBoundaryaMTip52SnMyKcBXX" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="3" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/3" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/admin/prepaidcard/searchcards" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\admin\prepaidcard\searchcards" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="50790" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/admin/prepaidcard/searchcards" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="58456" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/admin/prepaidcard/searchcards" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="max-age=0" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="2482" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="multipart/form-data; boundary=----WebKitFormBoundaryaMTip52SnMyKcBXX" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="i18n.langtag=fr; .ASPXANONYMOUS=mfV4YRiiKGy5CiVSlnckrJletoeLoTarlXR3Ef7hBI0pXAXerNasYNg9_Z3GUPThCJl9ZV3FOnBQhXufoLdd7yb3VlYvWWTJUyNqeJWyaHy8T9Ggr-SM_W2ykshc02LVdQG8WSbK2yg9KLKK7nty-g2; __RequestVerificationToken=dlPYpqTh9Bp9Z1kI55BCH37GM9BMomUV4b75Yl2gyeGatAV_akbBhx6knQ39q0ltkfxo67I4eRWggkuNh80-tNpfmB1XJrP1UkBjhuK9aAs1; .AspNet.ApplicationCookie=iqILN6XkA2_iaztoZZ7H7TzVZuTOlovTunYrV84H74PaNe_0ZDJVxg_xX4pn1pWQAix_qVW8BhCwfd29LHBy7SMmoQXx1VwVjoBsBjH_n9KUNEF_XAf_JRqINdgFiieNev4wDcMxsPleUUoZqni-mAnskQh3-3N93FMOZ5ESxh4xtdqDZLtgQuQxVZ8YLeR9NQ-Q5G9vFnFqVy-RLSC47X-6LzZmz_PKvmhu-jca_5dSf36PhBd4V0WVb8DFfx2CtaN730LXl9YOwzq5EybGN_wNWgV0w4hnDcZ-PD8u92qdCsn-j9gUR10NLkeRtb1BzTGt1FCXU4g2htJCv-Y5vrrbXDcEDwuoQDDQ0qGzDy1sIPvls0A96ngS8vC9vRkPNizF8qrzzOF8A4FX4mR-bKVTyTfCi7AR_KC1U7DiRPjrEWE9cdPFKvo7Guh5DlfBfvnRhJ0NTlZTOkBBeYOVsoyENE61F-A3k3H0FIq-N_g-gQ5h0q84vUquXdd4YBe8CmBvKCYbXkXPdTeHMhdmlFxncCkmwnzKWyeAnWFiav4" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:58456" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:58456/admin/prepaidcard/viewcards" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="http://localhost:58456" />
+    </item>
+    <item name="HTTP_UPGRADE_INSECURE_REQUESTS">
+      <value string="1" />
+    </item>
+  </serverVariables>
+  <form>
+    <item name="SCrit.ChkNumLot">
+      <value string="false" />
+    </item>
+    <item name="SCrit.ChkCode">
+      <value string="false" />
+    </item>
+    <item name="SCrit.ChkNumSerie">
+      <value string="false" />
+    </item>
+    <item name="SCrit.ChkIsInUse">
+      <value string="true" />
+      <value string="false" />
+    </item>
+    <item name="SCrit.IsInUse">
+      <value string="true" />
+      <value string="false" />
+    </item>
+    <item name="SCrit.ChkIsValidCard">
+      <value string="true" />
+      <value string="false" />
+    </item>
+    <item name="SCrit.IsValidCard">
+      <value string="true" />
+      <value string="false" />
+    </item>
+    <item name="SCrit.ChkIsActifCard">
+      <value string="true" />
+      <value string="false" />
+    </item>
+    <item name="SCrit.IsActifCard">
+      <value string="true" />
+      <value string="false" />
+    </item>
+    <item name="SCrit.ChkDateFinValidite">
+      <value string="false" />
+    </item>
+    <item name="SCrit.DateFinValidite">
+      <value string="31/12/2020 00:00:00" />
+    </item>
+    <item name="SCrit.ChkDateFirstUse">
+      <value string="false" />
+    </item>
+    <item name="SCrit.ChkProOwnerName">
+      <value string="false" />
+    </item>
+    <item name="SCrit.ChkProCompany">
+      <value string="true" />
+      <value string="false" />
+    </item>
+    <item name="SCrit.ProCompany">
+      <value string="YourName CARTE5600 T" />
+    </item>
+  </form>
+  <cookies>
+    <item name="i18n.langtag">
+      <value string="fr" />
+    </item>
+    <item name=".ASPXANONYMOUS">
+      <value string="mfV4YRiiKGy5CiVSlnckrJletoeLoTarlXR3Ef7hBI0pXAXerNasYNg9_Z3GUPThCJl9ZV3FOnBQhXufoLdd7yb3VlYvWWTJUyNqeJWyaHy8T9Ggr-SM_W2ykshc02LVdQG8WSbK2yg9KLKK7nty-g2" />
+    </item>
+    <item name="__RequestVerificationToken">
+      <value string="dlPYpqTh9Bp9Z1kI55BCH37GM9BMomUV4b75Yl2gyeGatAV_akbBhx6knQ39q0ltkfxo67I4eRWggkuNh80-tNpfmB1XJrP1UkBjhuK9aAs1" />
+    </item>
+    <item name=".AspNet.ApplicationCookie">
+      <value string="iqILN6XkA2_iaztoZZ7H7TzVZuTOlovTunYrV84H74PaNe_0ZDJVxg_xX4pn1pWQAix_qVW8BhCwfd29LHBy7SMmoQXx1VwVjoBsBjH_n9KUNEF_XAf_JRqINdgFiieNev4wDcMxsPleUUoZqni-mAnskQh3-3N93FMOZ5ESxh4xtdqDZLtgQuQxVZ8YLeR9NQ-Q5G9vFnFqVy-RLSC47X-6LzZmz_PKvmhu-jca_5dSf36PhBd4V0WVb8DFfx2CtaN730LXl9YOwzq5EybGN_wNWgV0w4hnDcZ-PD8u92qdCsn-j9gUR10NLkeRtb1BzTGt1FCXU4g2htJCv-Y5vrrbXDcEDwuoQDDQ0qGzDy1sIPvls0A96ngS8vC9vRkPNizF8qrzzOF8A4FX4mR-bKVTyTfCi7AR_KC1U7DiRPjrEWE9cdPFKvo7Guh5DlfBfvnRhJ0NTlZTOkBBeYOVsoyENE61F-A3k3H0FIq-N_g-gQ5h0q84vUquXdd4YBe8CmBvKCYbXkXPdTeHMhdmlFxncCkmwnzKWyeAnWFiav4" />
+    </item>
+  </cookies>
+</error>

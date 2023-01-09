@@ -1,0 +1,58 @@
+﻿@model List<WhatYouNeed.Model.Models.ListingReview>
+@using Microsoft.AspNet.Identity
+
+@{
+    Layout = null;
+}
+
+<div id="reviewList">
+    <div class="row">
+        <div class="col-md-12  ">
+            <h4><i class="fa fa-star"></i> [[[Reviews]]] (@Model.Count)</h4>
+        </div>
+    </div>
+
+    @foreach (var review in Model)
+    {
+        //var ratingClass = "s" + review.Rating;
+    <div class="row text-center-sm">
+        <div class="col-md-2 col-xs-12">
+            <a href="@Url.Action("Profile", "Listing", new { id = review.AspNetUserFrom.Id })">
+                <img class="rounded-circle thumb-sm m-r-2" src="@WhatYouNeed.Web.Utilities.ImageHelper.GetUserProfileImagePath(review.AspNetUserFrom.Id)" />
+            </a>
+            <p><a class="text-xs" href="@Url.Action("Profile", "Listing", new { id = review.AspNetUserFrom.Id })">@review.AspNetUserFrom.FullName</a></p>
+        </div>
+        <div class="col-md-10 col-xs-12">
+            @*<span class="score @ratingClass"></span>*@
+            <div class="form-group">
+                @for (int i = 1; i <= 5; ++i)
+                {
+                    if (i <= review.Rating)
+                    {
+                        <button type="button" class="btnrating btn btn-warning btn-sm">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </button>
+
+                    }
+                    else
+                    {
+                        <button type="button" class="btnrating btn btn-default btn-sm">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </button>
+
+                    }
+                }
+            </div>
+            <p class="text-sm"> @review.Created.ToShortDateString() -  @review.Description</p>
+        </div>
+
+    </div>
+
+        <hr />
+    }
+
+    @if (!Model.Any())
+    {
+        <p>[[[There is no review yet.]]]</p>
+    }    
+</div>

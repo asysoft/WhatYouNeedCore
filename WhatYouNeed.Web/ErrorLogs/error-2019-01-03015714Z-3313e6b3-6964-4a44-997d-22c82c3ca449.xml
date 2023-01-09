@@ -1,0 +1,194 @@
+﻿<error errorId="3313e6b3-6964-4a44-997d-22c82c3ca449" application="/LM/W3SVC/2/ROOT" host="HP-ASY" type="System.Web.HttpException" message="The controller for path '/pro/account/logoff' was not found or does not implement IController." source="System.Web.Mvc" detail="System.Web.HttpException (0x80004005): The controller for path '/pro/account/logoff' was not found or does not implement IController.&#xD;&#xA;   à System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)&#xD;&#xA;   à System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)&#xD;&#xA;   à System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController&amp; controller, IControllerFactory&amp; factory)&#xD;&#xA;   à System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)&#xD;&#xA;   à System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)&#xD;&#xA;   à System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)&#xD;&#xA;   à System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   à System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)&#xD;&#xA;   à System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="login@yourcompany2.com" time="2019-01-03T01:57:14.7121903Z" statusCode="404">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:no-cache&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_PRAGMA:no-cache&#xD;&#xA;HTTP_CONTENT_LENGTH:178&#xD;&#xA;HTTP_CONTENT_TYPE:application/x-www-form-urlencoded&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7&#xD;&#xA;HTTP_COOKIE:.ASPXANONYMOUS=bq3I42ihTv5hQoYBqPpPJynNsipDWrMOxJbm40kumoTeRchtACPPGWrbsHuWssVT3BX9pgNxCxFJ4lEtqajdJLhnKU0SxKjohtu4QtGkGL132Nuvtt9qaRh9sHhrose4cblyugTn5tyh3I4DHgP_uA2; __RequestVerificationToken=ez9b0IbKD1TCKgGAaJQBVrsdF5dWXA2dFxN2Z7ndcbpaa6VTH7tu-LgqZQ4ertCzfp8_YmbDI9XC5gkcJSBU_lnoNJRDVE_s7m3VU01VP8I1; i18n.langtag=fr; .AspNet.ApplicationCookie=4AiKFdQJZNRXBecsq_wnYag3ZnTpEKiCmw8uQMZ-muy5bS1wa8p1_4HiIH_KCM3LhNak_oZE3HZnCK6D7sHoNlQ8vSIGbyUvK7h4q9V9WcWoHOol1clF4u85Bs_WMUY1yD-z2MVLegRWfdoBaMIotTq5QaW5Qp3fbhcewxo-t_N6DD8WOiCfEV3dw3M-QHVqHlZfCktMfpCdURntaISx-E0-le2Ecn8QbU1tMDAc-zxl3nCAV3t6QGlA04YPTR6k6dhDWOrS2iCF70lp8oYngmukXbwXNymj6BUbD6VWacAFx_frtzsaOnBzSWFhBBuKnx2EFpOORatATzq_N9DtmNaxER6BEEYT-iG-XzVAXNTbiR7tyg7Nscr_9GSrUgcNM3P12WG9z4xyDD6OexZUuCRBNY5t9g741vItXcgX0wSjhtLi_dwyx8YLzM0gxhI9OrfoQZltLMMhfaT3_CKvnjqpGrT5n3RkrElHnvHoJxYudYvhsWFmbPpMnKg3XT0FBhF5RMzc2rzJNArYn-z_WQ&#xD;&#xA;HTTP_HOST:localhost:50144&#xD;&#xA;HTTP_REFERER:http://localhost:50144/userpro&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&#xD;&#xA;HTTP_ORIGIN:http://localhost:50144&#xD;&#xA;HTTP_UPGRADE_INSECURE_REQUESTS:1&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: no-cache&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Pragma: no-cache&#xD;&#xA;Content-Length: 178&#xD;&#xA;Content-Type: application/x-www-form-urlencoded&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7&#xD;&#xA;Cookie: .ASPXANONYMOUS=bq3I42ihTv5hQoYBqPpPJynNsipDWrMOxJbm40kumoTeRchtACPPGWrbsHuWssVT3BX9pgNxCxFJ4lEtqajdJLhnKU0SxKjohtu4QtGkGL132Nuvtt9qaRh9sHhrose4cblyugTn5tyh3I4DHgP_uA2; __RequestVerificationToken=ez9b0IbKD1TCKgGAaJQBVrsdF5dWXA2dFxN2Z7ndcbpaa6VTH7tu-LgqZQ4ertCzfp8_YmbDI9XC5gkcJSBU_lnoNJRDVE_s7m3VU01VP8I1; i18n.langtag=fr; .AspNet.ApplicationCookie=4AiKFdQJZNRXBecsq_wnYag3ZnTpEKiCmw8uQMZ-muy5bS1wa8p1_4HiIH_KCM3LhNak_oZE3HZnCK6D7sHoNlQ8vSIGbyUvK7h4q9V9WcWoHOol1clF4u85Bs_WMUY1yD-z2MVLegRWfdoBaMIotTq5QaW5Qp3fbhcewxo-t_N6DD8WOiCfEV3dw3M-QHVqHlZfCktMfpCdURntaISx-E0-le2Ecn8QbU1tMDAc-zxl3nCAV3t6QGlA04YPTR6k6dhDWOrS2iCF70lp8oYngmukXbwXNymj6BUbD6VWacAFx_frtzsaOnBzSWFhBBuKnx2EFpOORatATzq_N9DtmNaxER6BEEYT-iG-XzVAXNTbiR7tyg7Nscr_9GSrUgcNM3P12WG9z4xyDD6OexZUuCRBNY5t9g741vItXcgX0wSjhtLi_dwyx8YLzM0gxhI9OrfoQZltLMMhfaT3_CKvnjqpGrT5n3RkrElHnvHoJxYudYvhsWFmbPpMnKg3XT0FBhF5RMzc2rzJNArYn-z_WQ&#xD;&#xA;Host: localhost:50144&#xD;&#xA;Referer: http://localhost:50144/userpro&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&#xD;&#xA;Origin: http://localhost:50144&#xD;&#xA;Upgrade-Insecure-Requests: 1&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="ApplicationCookie" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="login@yourcompany2.com" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="login@yourcompany2.com" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="login@yourcompany2.com" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="178" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/pro/account/logoff" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\pro\account\logoff" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="49340" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/pro/account/logoff" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="50144" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/pro/account/logoff" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_PRAGMA">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="178" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string=".ASPXANONYMOUS=bq3I42ihTv5hQoYBqPpPJynNsipDWrMOxJbm40kumoTeRchtACPPGWrbsHuWssVT3BX9pgNxCxFJ4lEtqajdJLhnKU0SxKjohtu4QtGkGL132Nuvtt9qaRh9sHhrose4cblyugTn5tyh3I4DHgP_uA2; __RequestVerificationToken=ez9b0IbKD1TCKgGAaJQBVrsdF5dWXA2dFxN2Z7ndcbpaa6VTH7tu-LgqZQ4ertCzfp8_YmbDI9XC5gkcJSBU_lnoNJRDVE_s7m3VU01VP8I1; i18n.langtag=fr; .AspNet.ApplicationCookie=4AiKFdQJZNRXBecsq_wnYag3ZnTpEKiCmw8uQMZ-muy5bS1wa8p1_4HiIH_KCM3LhNak_oZE3HZnCK6D7sHoNlQ8vSIGbyUvK7h4q9V9WcWoHOol1clF4u85Bs_WMUY1yD-z2MVLegRWfdoBaMIotTq5QaW5Qp3fbhcewxo-t_N6DD8WOiCfEV3dw3M-QHVqHlZfCktMfpCdURntaISx-E0-le2Ecn8QbU1tMDAc-zxl3nCAV3t6QGlA04YPTR6k6dhDWOrS2iCF70lp8oYngmukXbwXNymj6BUbD6VWacAFx_frtzsaOnBzSWFhBBuKnx2EFpOORatATzq_N9DtmNaxER6BEEYT-iG-XzVAXNTbiR7tyg7Nscr_9GSrUgcNM3P12WG9z4xyDD6OexZUuCRBNY5t9g741vItXcgX0wSjhtLi_dwyx8YLzM0gxhI9OrfoQZltLMMhfaT3_CKvnjqpGrT5n3RkrElHnvHoJxYudYvhsWFmbPpMnKg3XT0FBhF5RMzc2rzJNArYn-z_WQ" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:50144" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:50144/userpro" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="http://localhost:50144" />
+    </item>
+    <item name="HTTP_UPGRADE_INSECURE_REQUESTS">
+      <value string="1" />
+    </item>
+  </serverVariables>
+  <form>
+    <item name="__RequestVerificationToken">
+      <value string="iXN-jJ8oDyrHoOyMShI3fdWRFqqcsrBai6x-pll_O8RBG9TulNObTYlGoRbKuJSeYCTJS4libsLp7NX1kPwkeoyM5zxnNjLrPlw9_firvPW-y45sjwSerE70_dKcets2kpOL_fT7LtO3na7Gxjl18g2" />
+    </item>
+  </form>
+  <cookies>
+    <item name=".ASPXANONYMOUS">
+      <value string="bq3I42ihTv5hQoYBqPpPJynNsipDWrMOxJbm40kumoTeRchtACPPGWrbsHuWssVT3BX9pgNxCxFJ4lEtqajdJLhnKU0SxKjohtu4QtGkGL132Nuvtt9qaRh9sHhrose4cblyugTn5tyh3I4DHgP_uA2" />
+    </item>
+    <item name="__RequestVerificationToken">
+      <value string="ez9b0IbKD1TCKgGAaJQBVrsdF5dWXA2dFxN2Z7ndcbpaa6VTH7tu-LgqZQ4ertCzfp8_YmbDI9XC5gkcJSBU_lnoNJRDVE_s7m3VU01VP8I1" />
+    </item>
+    <item name="i18n.langtag">
+      <value string="fr" />
+    </item>
+    <item name=".AspNet.ApplicationCookie">
+      <value string="4AiKFdQJZNRXBecsq_wnYag3ZnTpEKiCmw8uQMZ-muy5bS1wa8p1_4HiIH_KCM3LhNak_oZE3HZnCK6D7sHoNlQ8vSIGbyUvK7h4q9V9WcWoHOol1clF4u85Bs_WMUY1yD-z2MVLegRWfdoBaMIotTq5QaW5Qp3fbhcewxo-t_N6DD8WOiCfEV3dw3M-QHVqHlZfCktMfpCdURntaISx-E0-le2Ecn8QbU1tMDAc-zxl3nCAV3t6QGlA04YPTR6k6dhDWOrS2iCF70lp8oYngmukXbwXNymj6BUbD6VWacAFx_frtzsaOnBzSWFhBBuKnx2EFpOORatATzq_N9DtmNaxER6BEEYT-iG-XzVAXNTbiR7tyg7Nscr_9GSrUgcNM3P12WG9z4xyDD6OexZUuCRBNY5t9g741vItXcgX0wSjhtLi_dwyx8YLzM0gxhI9OrfoQZltLMMhfaT3_CKvnjqpGrT5n3RkrElHnvHoJxYudYvhsWFmbPpMnKg3XT0FBhF5RMzc2rzJNArYn-z_WQ" />
+    </item>
+  </cookies>
+</error>

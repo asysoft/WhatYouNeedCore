@@ -1,17 +1,36 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-WhatYouNeed.Web-de6f9a4b-d127-4b30-bc47-44162694daa2</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyName>WhatYouNeed.Web</AssemblyName>
+  </PropertyGroup>
+  
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.0" NoWarn="NU1605" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="7.0.0" NoWarn="NU1605" />
-    <PackageReference Include="Microsoft.Identity.Web" Version="1.16.0" />
-    <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.16.0" />
+    <Compile Remove="App_Start\UnityMvcActivator - Copie.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LinqKit.Core" Version="1.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Owin" Version="6.0.13" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="1.25.10" />
+    <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.25.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Appli.PrepaidCards.Lib\Appli.PrepaidCards.Lib.csproj" />
+    <ProjectReference Include="..\Frameworks\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj" />
+    <ProjectReference Include="..\Frameworks\Repository.Pattern\Repository.Pattern.csproj" />
+    <ProjectReference Include="..\WhatYouNeed.Core\Appli.Core.csproj" />
+    <ProjectReference Include="..\WhatYouNeed.Model\Appli.Model.csproj" />
+    <ProjectReference Include="..\WhatYouNeed.Service\Appli.Service.csproj" />
   </ItemGroup>
 
 </Project>

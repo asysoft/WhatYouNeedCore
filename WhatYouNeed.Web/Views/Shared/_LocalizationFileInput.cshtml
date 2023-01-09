@@ -1,0 +1,8 @@
+﻿@if (Context.GetPrincipalAppLanguageForRequest().ToString() == "en")
+{
+    <script src="~/Scripts/fileinput_locale_uk.js"></script>
+}
+@if (Context.GetPrincipalAppLanguageForRequest().ToString() == "fr")
+{
+    <script src="~/Scripts/fileinput_locale_fr.js"></script>
+}

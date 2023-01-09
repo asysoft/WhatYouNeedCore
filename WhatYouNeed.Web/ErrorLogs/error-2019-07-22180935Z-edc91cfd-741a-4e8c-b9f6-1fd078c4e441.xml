@@ -1,0 +1,240 @@
+﻿<error errorId="edc91cfd-741a-4e8c-b9f6-1fd078c4e441" application="/LM/W3SVC/3/ROOT" host="HP-ASY" type="System.ArgumentNullException" message="La valeur ne peut pas être null.&#xD;&#xA;Nom du paramètre : String" source="mscorlib" detail="System.ArgumentNullException: La valeur ne peut pas être null.&#xD;&#xA;Nom du paramètre : String&#xD;&#xA;   à System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer&amp; number, NumberFormatInfo info, Boolean parseDecimal)&#xD;&#xA;   à System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)&#xD;&#xA;   à System.Int32.Parse(String s)&#xD;&#xA;   à WhatYouNeed.Web.Controllers.ListingController.&lt;ListingUpdate&gt;d__36.MoveNext() dans C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\Controllers\ListingController.cs:ligne 497&#xD;&#xA;--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---&#xD;&#xA;   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   à System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass8_0.&lt;BeginInvokeAsynchronousActionMethod&gt;b__1(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.&lt;&gt;c__DisplayClass11_0.&lt;InvokeActionMethodFilterAsynchronouslyRecursive&gt;b__0()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.&lt;&gt;c__DisplayClass11_2.&lt;InvokeActionMethodFilterAsynchronouslyRecursive&gt;b__2()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass7_0.&lt;BeginInvokeActionMethodWithFilters&gt;b__1(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass3_6.&lt;BeginInvokeAction&gt;b__4()&#xD;&#xA;   à System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass3_1.&lt;BeginInvokeAction&gt;b__1(IAsyncResult asyncResult)" user="asysoft2207@yahoo.com" time="2019-07-22T18:09:35.5865611Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:no-cache&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_PRAGMA:no-cache&#xD;&#xA;HTTP_CONTENT_LENGTH:56889&#xD;&#xA;HTTP_CONTENT_TYPE:multipart/form-data; boundary=----WebKitFormBoundaryL7np0toFsyot28R3&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7&#xD;&#xA;HTTP_COOKIE:i18n.langtag=fr; .ASPXANONYMOUS=vDtufPVatXfFwd0AgDSYoGOh6LnFZBvJ52MgD5exO5lwK59WfbIDDLmLrnhXi0lZ1IbR_K3gDsS-oB8nGdDV9sb3e80JGf2qZpi5qqGyjLNlG9J4SY_Gcyb_AvkvjmSj5FXtbz2mIajRQX8jYwnhIA2; __RequestVerificationToken=81IfkK15xtdQA7G0fWmxeot_JKMgEPCDymre5Jqj26kRPzXo_M7O0EN_DaJmj0DbXlbuB0DoEhTgOeQvwoQyNCqRXbNdD3eaAnbdcoSfuYY1; .AspNet.ApplicationCookie=ZgQQpkshA-qRc8Hz1rWBu5bMYKxp4sEPLk1C4C1tsngiYVbFH6K2p8hyKZjJ4ejcoZLGP1nvGVIU3oE5cPbOUlOw4v6EZBp8dnAGYp9B4PRrBgm6N3qZF_hBTRuT4O1SAeY5POd6HoC68ZAaxaa4FprIw7Me8D13IAD5MgqSKusj-JqD1U2dO2x-zrVkyuy1up5CldAj4CwGSq9xzqNQdfu7VGCd0hprpQx5egBjWpNGIScOr9kKCBnwhkhymVCmZJnYZVrka9QoOaL1NotbQBinkHp1u8FKd0T9m3nsVQI-CldpE-5UAwl-Fw6B7Y8jvUt254oePYIxBEYrfyjfEfGAGUk1sRcjVnNg3XA71cZreUMrw5O0oLLfe_Lg__4Xw0r3c8r_DSp0ymRe-2VEKGsDXlatiuxYrIK4TiAa8f5jH8zziAXARBptlPAN8m23kKgSGkQ1SMmoj7E4smKzomRFbBSK3BKTzz-9myRP40Vm_omoUgetMLoH30i87Q9o&#xD;&#xA;HTTP_HOST:localhost:58456&#xD;&#xA;HTTP_REFERER:http://localhost:58456/listing/listingupdate&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36&#xD;&#xA;HTTP_ORIGIN:http://localhost:58456&#xD;&#xA;HTTP_UPGRADE_INSECURE_REQUESTS:1&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: no-cache&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Pragma: no-cache&#xD;&#xA;Content-Length: 56889&#xD;&#xA;Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryL7np0toFsyot28R3&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7&#xD;&#xA;Cookie: i18n.langtag=fr; .ASPXANONYMOUS=vDtufPVatXfFwd0AgDSYoGOh6LnFZBvJ52MgD5exO5lwK59WfbIDDLmLrnhXi0lZ1IbR_K3gDsS-oB8nGdDV9sb3e80JGf2qZpi5qqGyjLNlG9J4SY_Gcyb_AvkvjmSj5FXtbz2mIajRQX8jYwnhIA2; __RequestVerificationToken=81IfkK15xtdQA7G0fWmxeot_JKMgEPCDymre5Jqj26kRPzXo_M7O0EN_DaJmj0DbXlbuB0DoEhTgOeQvwoQyNCqRXbNdD3eaAnbdcoSfuYY1; .AspNet.ApplicationCookie=ZgQQpkshA-qRc8Hz1rWBu5bMYKxp4sEPLk1C4C1tsngiYVbFH6K2p8hyKZjJ4ejcoZLGP1nvGVIU3oE5cPbOUlOw4v6EZBp8dnAGYp9B4PRrBgm6N3qZF_hBTRuT4O1SAeY5POd6HoC68ZAaxaa4FprIw7Me8D13IAD5MgqSKusj-JqD1U2dO2x-zrVkyuy1up5CldAj4CwGSq9xzqNQdfu7VGCd0hprpQx5egBjWpNGIScOr9kKCBnwhkhymVCmZJnYZVrka9QoOaL1NotbQBinkHp1u8FKd0T9m3nsVQI-CldpE-5UAwl-Fw6B7Y8jvUt254oePYIxBEYrfyjfEfGAGUk1sRcjVnNg3XA71cZreUMrw5O0oLLfe_Lg__4Xw0r3c8r_DSp0ymRe-2VEKGsDXlatiuxYrIK4TiAa8f5jH8zziAXARBptlPAN8m23kKgSGkQ1SMmoj7E4smKzomRFbBSK3BKTzz-9myRP40Vm_omoUgetMLoH30i87Q9o&#xD;&#xA;Host: localhost:58456&#xD;&#xA;Referer: http://localhost:58456/listing/listingupdate&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36&#xD;&#xA;Origin: http://localhost:58456&#xD;&#xA;Upgrade-Insecure-Requests: 1&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/3/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="ApplicationCookie" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="asysoft2207@yahoo.com" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="asysoft2207@yahoo.com" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="asysoft2207@yahoo.com" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="56889" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="multipart/form-data; boundary=----WebKitFormBoundaryL7np0toFsyot28R3" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="3" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/3" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/listing/listingupdate" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\ASY_DVP\TrucsNTrocsWeb\TrucsNTrocsMarket\src\WhatYouNeed.Web\listing\listingupdate" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="54163" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/listing/listingupdate" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="58456" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/listing/listingupdate" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_PRAGMA">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="56889" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="multipart/form-data; boundary=----WebKitFormBoundaryL7np0toFsyot28R3" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="i18n.langtag=fr; .ASPXANONYMOUS=vDtufPVatXfFwd0AgDSYoGOh6LnFZBvJ52MgD5exO5lwK59WfbIDDLmLrnhXi0lZ1IbR_K3gDsS-oB8nGdDV9sb3e80JGf2qZpi5qqGyjLNlG9J4SY_Gcyb_AvkvjmSj5FXtbz2mIajRQX8jYwnhIA2; __RequestVerificationToken=81IfkK15xtdQA7G0fWmxeot_JKMgEPCDymre5Jqj26kRPzXo_M7O0EN_DaJmj0DbXlbuB0DoEhTgOeQvwoQyNCqRXbNdD3eaAnbdcoSfuYY1; .AspNet.ApplicationCookie=ZgQQpkshA-qRc8Hz1rWBu5bMYKxp4sEPLk1C4C1tsngiYVbFH6K2p8hyKZjJ4ejcoZLGP1nvGVIU3oE5cPbOUlOw4v6EZBp8dnAGYp9B4PRrBgm6N3qZF_hBTRuT4O1SAeY5POd6HoC68ZAaxaa4FprIw7Me8D13IAD5MgqSKusj-JqD1U2dO2x-zrVkyuy1up5CldAj4CwGSq9xzqNQdfu7VGCd0hprpQx5egBjWpNGIScOr9kKCBnwhkhymVCmZJnYZVrka9QoOaL1NotbQBinkHp1u8FKd0T9m3nsVQI-CldpE-5UAwl-Fw6B7Y8jvUt254oePYIxBEYrfyjfEfGAGUk1sRcjVnNg3XA71cZreUMrw5O0oLLfe_Lg__4Xw0r3c8r_DSp0ymRe-2VEKGsDXlatiuxYrIK4TiAa8f5jH8zziAXARBptlPAN8m23kKgSGkQ1SMmoj7E4smKzomRFbBSK3BKTzz-9myRP40Vm_omoUgetMLoH30i87Q9o" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:58456" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:58456/listing/listingupdate" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="http://localhost:58456" />
+    </item>
+    <item name="HTTP_UPGRADE_INSECURE_REQUESTS">
+      <value string="1" />
+    </item>
+  </serverVariables>
+  <form>
+    <item name="ListingItem.ID">
+      <value string="0" />
+    </item>
+    <item name="CategoryID">
+      <value string="30" />
+    </item>
+    <item name="Title">
+      <value string="Refregirateur AIRMAX congelateur Neuf" />
+    </item>
+    <item name="Description">
+      <value string="Refregirateur AIRMAX congelateur Neuf&#xD;&#xA;Refregirateur AIRMAX congelateur Neuf&#xD;&#xA;Refregirateur AIRMAX congelateur Neuf&#xD;&#xA;" />
+    </item>
+    <item name="Price">
+      <value string="457666" />
+    </item>
+    <item name="StockDispo">
+      <value string="5" />
+    </item>
+    <item name="IsOccasion">
+      <value string="" />
+    </item>
+    <item name="Active">
+      <value string="checked" />
+      <value string="false" />
+    </item>
+    <item name="LocationRefID">
+      <value string="21" />
+    </item>
+    <item name="Location">
+      <value string="" />
+    </item>
+    <item name="LocSelectedName">
+      <value string="21 Rue Ernest Renan, 92130 Issy-les-Moulineaux, France" />
+    </item>
+    <item name="Longitude">
+      <value string="57.502202799999964" />
+    </item>
+    <item name="Latitude">
+      <value string="-20.165731" />
+    </item>
+    <item name="ContactName">
+      <value string="Albert Rochebois" />
+    </item>
+    <item name="ContactPhone">
+      <value string="+230 789456123" />
+    </item>
+    <item name="ContactEmail">
+      <value string="asysoft2207@yahoo.com" />
+    </item>
+  </form>
+  <cookies>
+    <item name="i18n.langtag">
+      <value string="fr" />
+    </item>
+    <item name=".ASPXANONYMOUS">
+      <value string="vDtufPVatXfFwd0AgDSYoGOh6LnFZBvJ52MgD5exO5lwK59WfbIDDLmLrnhXi0lZ1IbR_K3gDsS-oB8nGdDV9sb3e80JGf2qZpi5qqGyjLNlG9J4SY_Gcyb_AvkvjmSj5FXtbz2mIajRQX8jYwnhIA2" />
+    </item>
+    <item name="__RequestVerificationToken">
+      <value string="81IfkK15xtdQA7G0fWmxeot_JKMgEPCDymre5Jqj26kRPzXo_M7O0EN_DaJmj0DbXlbuB0DoEhTgOeQvwoQyNCqRXbNdD3eaAnbdcoSfuYY1" />
+    </item>
+    <item name=".AspNet.ApplicationCookie">
+      <value string="ZgQQpkshA-qRc8Hz1rWBu5bMYKxp4sEPLk1C4C1tsngiYVbFH6K2p8hyKZjJ4ejcoZLGP1nvGVIU3oE5cPbOUlOw4v6EZBp8dnAGYp9B4PRrBgm6N3qZF_hBTRuT4O1SAeY5POd6HoC68ZAaxaa4FprIw7Me8D13IAD5MgqSKusj-JqD1U2dO2x-zrVkyuy1up5CldAj4CwGSq9xzqNQdfu7VGCd0hprpQx5egBjWpNGIScOr9kKCBnwhkhymVCmZJnYZVrka9QoOaL1NotbQBinkHp1u8FKd0T9m3nsVQI-CldpE-5UAwl-Fw6B7Y8jvUt254oePYIxBEYrfyjfEfGAGUk1sRcjVnNg3XA71cZreUMrw5O0oLLfe_Lg__4Xw0r3c8r_DSp0ymRe-2VEKGsDXlatiuxYrIK4TiAa8f5jH8zziAXARBptlPAN8m23kKgSGkQ1SMmoj7E4smKzomRFbBSK3BKTzz-9myRP40Vm_omoUgetMLoH30i87Q9o" />
+    </item>
+  </cookies>
+</error>

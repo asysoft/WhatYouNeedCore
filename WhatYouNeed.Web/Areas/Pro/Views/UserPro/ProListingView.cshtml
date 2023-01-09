@@ -1,0 +1,450 @@
+﻿
+@model WhatYouNeed.Web.Models.ProListingViewModel
+
+@using PagedList.Mvc
+
+@using WhatYouNeed.Web.Utilities
+@using WhatYouNeed.Service
+@using Microsoft.AspNet.Identity
+@using WhatYouNeed.Web.Extensions  
+
+
+@{
+    /**/
+
+    ViewBag.Title = "TnT";
+}
+
+
+@section Styles {
+
+    <link href="~/Content/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" />
+    <link href="~/Content/jsTree/themes/default/style.min.css" rel="stylesheet" />
+}
+
+    <div class="container-fluid" style="background-color:#EAF4D3">
+        <div class="row" style="background-color:#EAF4D3">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="container-fluid">
+                        <div class="row">
+                            @Html.Partial("_UserMessage")
+
+                            <div class="col-xs-12 col-md-12">
+                                <div class="card ">
+                                    <div class="card-header">
+                                        <h3>
+                                            @Model.ListingItem.ListingCurrent.Title
+                                            @*<span class="score @Model.ListingItem.ListingCurrent.RatingClass text-md"></span>*@
+                                            <!-- Show edit button if administrator or the user who create the listing -->
+                                            @if (Model.ListingItem.ListingCurrent.UserID == User.Identity.GetUserId() || User.IsInRole("Administrator"))
+                                            {
+                                                <a class="btn btn-primary" href="@Url.Action("ListingUpdate", "Listing", new { id = Model.ListingItem.ListingCurrent.ID, area = "" })"><i class="fa fa-edit"></i> [[[Edit]]]</a>
+                                            }
+                                        </h3>
+                                        <div class="form-group pull-right" id="rating-ability-wrapper">
+                                            <button type="button" class="btnrating btn btn-default btn-sm " data-attr="1" id="rating-star-Title-1">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                            </button>
+                                            <button type="button" class="btnrating btn btn-default btn-sm" data-attr="2" id="rating-star-Title-2">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                            </button>
+                                            <button type="button" class="btnrating btn btn-default btn-sm" data-attr="3" id="rating-star-Title-3">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                            </button>
+                                            <button type="button" class="btnrating btn btn-default btn-sm" data-attr="4" id="rating-star-Title-4">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                            </button>
+                                            <button type="button" class="btnrating btn btn-default btn-sm" data-attr="5" id="rating-star-Title-5">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        @if (Model.ListingItem.ListingCurrent.Price.HasValue)
+                                        {
+                                            <h4>
+                                                @Html.DisplayFor(x => x.ListingItem.ListingCurrent.PriceFormatted) @Model.ListingItem.ListingCurrent.ListingType.PriceUnitLabel
+                                            </h4>
+                                        }
+                                        <p class="lead text-lighten">
+                                            @Model.ListingItem.ListingCurrent.LocationRef.Name - @Model.ListingItem.ListingCurrent.LocationRef.Description - @Model.ListingItem.ListingCurrent.Location
+                                        </p>
+                                    </div>
+
+                                    <hr />
+                                    <div class="card-block fa fa-info-circle">
+                                        <h5>
+
+                                            @Model.ListingItem.ListingCurrent.Description
+                                        </h5>
+                                    </div>
+                                    <hr />
+                                    <div class="card-block">
+                                        @if (Model.ListingItem.Pictures.Count > 0)
+                                        {
+                                            <div id="carousel-gallery" class="carousel slide" data-ride="carousel">
+                                                <ul class="carousel-indicators">
+                                                    @for (int i = 0; i < Model.ListingItem.Pictures.Count; i++)
+                                                    {
+                                                        <li data-target="#carousel-gallery" data-slide-to="@i"></li>
+                                                    }
+                                                </ul>
+
+                                                <div class="carousel-inner">
+                                                    @for (int i = 0; i < Model.ListingItem.Pictures.Count; i++)
+                                                    {
+                                                        <div class="carousel-item @(i == 0 ? "active" : "")">
+                                                            <img style=" margin-left: auto; margin-right: auto;" alt="" src="@Model.ListingItem.Pictures[i].Url">
+                                                        </div>
+                                                    }
+                                                </div>
+
+                                                <a class="carousel-control-prev pull-left" href="#carousel-gallery" data-slide="prev">
+                                                    <span class="carousel-control-prev-icon"></span>
+                                                </a>
+                                                <a class="carousel-control-next pull-right" href="#carousel-gallery" data-slide="next">
+                                                    <span class="carousel-control-next-icon"></span>
+                                                </a>
+
+                                            </div>
+
+                                            <div class="text-center mt-4">
+
+                                                <div class="row text-center ml-4">
+
+                                                    @foreach (var thumbnail in Model.ListingItem.Pictures)
+                                                    {
+                                                        <div class="carousel-buttons col-xs-6 col-md-2">
+                                                            <a data-target="#carousel-gallery" data-slide-to="@thumbnail.Ordering" href="#">
+                                                                <div class="img-circle">
+                                                                    <img class="carousel-icons-img" src="@thumbnail.Url" style=" width: 100%; display: block;" />
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+                                                    }
+                                                </div>
+
+
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <img style="width: 100%" src="@WhatYouNeed.Web.Utilities.ImageHelper.GetListingImagePath(0)" />
+                                        }
+                                    </div>
+                                    <hr />
+                                    <div class="card-block bdr-t-none">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        [[[Category]]]
+                                                    </td>
+                                                    <td>
+                                                        <a href="@Url.Action("Search", "Home", new { categoryId = Model.ListingItem.ListingCurrent.CategoryID })">@Model.ListingItem.ListingCurrent.Category.Name</a>
+                                                    </td>
+                                                </tr>
+                                                @if (Model.ListingItem.ListingCurrent.Price.HasValue)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            [[[Price]]]
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(x => Model.ListingItem.ListingCurrent.PriceFormatted)
+                                                        </td>
+                                                    </tr>
+                                                }
+                                                <tr>
+                                                    <td>
+                                                        [[[Listing Type]]]
+                                                    </td>
+                                                    <td>
+                                                        @Model.ListingItem.ListingCurrent.ListingType.Name
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        [[[Localization]]]
+                                                    </td>
+                                                    <td>
+                                                        @Model.ListingItem.ListingCurrent.LocationRef.Name - @Model.ListingItem.ListingCurrent.LocationRef.Description
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                <tr>
+                                                    <td>
+                                                        [[[Location detail]]]
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(x => Model.ListingItem.ListingCurrent.Location)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        [[[Date Posted]]]
+                                                    </td>
+                                                    <td>
+                                                        @Model.ListingItem.ListingCurrent.Created.ToShortDateString()
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        [[[Views]]]
+                                                    </td>
+                                                    <td>
+                                                        @Model.ListingItem.ListingCurrent.ListingStats.FirstOrDefault().CountView
+                                                    </td>
+                                                </tr>
+
+                                                @foreach (var item in Model.ListingItem.ListingCurrent.ListingMetas)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @item.MetaField.Name
+                                                        </td>
+                                                        <td>
+                                                            @item.Value
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <hr />
+                                    <div class="card-block fa fa-map-marker">
+                                        <input type="hidden" id="LocSelectedName" name="LocSelectedName" value="ile Maurice" />
+                                        <input type="hidden" id="Longitude" name="ListingItem.ListingCurrent.Longitude" value="@Model.ListingItem.ListingCurrent.Longitude" />
+                                        <input type="hidden" id="Latitude" name="ListingItem.ListingCurrent.Latitude" value="@Model.ListingItem.ListingCurrent.Latitude" />
+
+                                        @if (Model.ListingItem.ListingCurrent.Latitude.HasValue && Model.ListingItem.ListingCurrent.Longitude.HasValue)
+                                        {
+                                            <div class="">
+                                                <div id="map-canvas"></div>
+                                            </div>
+                                        }
+                                    </div>
+                                    <hr />
+                                    <div class="card-block" id="contact">
+
+                                        <div class="bdr-t-none">
+                                            @if (Model.ListingItem.ListingCurrent.ShowPhone && !string.IsNullOrEmpty(Model.ListingItem.ListingCurrent.ContactPhone))
+                                            {
+                                                <div class="list-group">
+                                                    <a data-text-swap="[[[Contact number (Click to show)]]]" data-text-original="@Model.ListingItem.ListingCurrent.ContactPhone" class="text-swap list-group-item "><i class="mdi-hardware-phone-iphone"></i> [[[Contact number (Click to show)]]]</a>
+                                                    <a href="@Url.Action("Profile", "Listing", new { id = Model.ListingItem.ListingCurrent.UserID })" class="list-group-item"><i class="mdi-action-view-module"></i>[[[View User's other listings]]]</a>
+                                                </div>
+                                            }
+
+                                            <div class="panel-heading">
+                                                <span>[[[Contact]]] @Model.ListingItem.User.FullName</span>
+                                                <a class="btn btn-default pull-right" id="contactModal" data-toggle="modal" data-target="#contactModal"><i class="fa fa-envelope"></i> - [[[Send a message]]]</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <hr />
+
+                                    <div class="card-block">
+                                        @Html.Partial("~/Views/Listing/_ListingReviewModal.cshtml", Model.ListingItem)
+                                    </div>
+                                    <div class="card-block">
+                                        @Html.Partial("~/Views/Listing/_ListingReview.cshtml", Model.ListingItem.ListingReviews)
+
+                                        <!-- Listing Hook -->
+                                        @Html.DoAction(HookName.Listing, Model.ListingItem.ListingCurrent.ID)
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 m-b-3">
+
+                <div class="row align-self-center">
+                    <a href="@Url.Action("ShowProIdentityByID", "UserPro", new {area="Pro", userID = @Model.ListingItem.User.Id })">
+                        <h3 class="font-weight-bold display-4 text-center">
+                            @Html.DisplayFor(m => m.ProInfos.UserAddInf.ProCompany, new { @class = "form-control" })
+                        </h3>
+                    </a>
+                </div>
+                <div class="row">
+                    <div class="col col-md-4">
+                        <div class="align-self-baseline m-t-3">
+                            <a href="@Url.Action("ShowProShopByID", "UserPro", new {area="Pro", userID = @Model.ListingItem.User.Id })">
+                                <img class="img-fluid" style="width: 100%; height: auto" src="@Model.ProInfos.Pictures.First().Url" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col col-md-8 align-self-start">
+
+                        <div class="form-group text-md font-weight-bold">
+                            <div class="mark">
+                                @*<label class="text-md" for="ProTownZip">[[[City]]] : </label>*@
+                                @Html.DisplayFor(m => m.ProInfos.UserAddInf.ProTownZip, new { @class = "form-control" })
+                            </div>
+                            <div class="mark">
+                                @*<label class="text-md" for="ProPhone">[[[Professional Phone]]] : </label>*@
+                                @Html.DisplayFor(m => m.ProInfos.UserAddInf.ProPhone, new { @class = "form-control" })
+                            </div>
+                            <div class="mark">
+                                @*<label class="text-md" for="Email">[[[Company Email]]] : </label>*@
+                                @Html.DisplayFor(m => m.ProInfos.UserAddInf.ProEmail, new { @class = "form-control" })
+                            </div>
+                            <div class="mark">
+                                @*<label class="text-md" for="ProSiteWeb">[[[Web Site]]] : </label>*@
+                                @Html.DisplayFor(m => m.ProInfos.UserAddInf.ProSiteWeb, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+                <div class="row m-t-5 m-b-3">
+                    <div class="col-md-12">
+                        <div class="form-group ">
+                            <div class="font-weight-bold text-warning">
+                                <h4>
+                                    <i class="font-weight-bold text-warning fa fa-shopping-cart">  [[[Articles in Shop]]]</i>
+                                </h4>
+                            </div>
+
+                            <div class="btn-group pull-right" role="group" aria-label="Sort View">
+                                <a class="btn btn-primary" href="@Request.UrlReplace("SortView", WhatYouNeed.Model.Enum.Enum_SortView.Grid.ToString())"><i class="fa fa-th"></i> [[[Grid]]]</a>
+                                <a class="btn btn-primary" href="@Request.UrlReplace("SortView", WhatYouNeed.Model.Enum.Enum_SortView.List.ToString())"><i class="fa fa-th-list"></i> [[[List]]]</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row m-b-10">
+
+                    @switch (Model.ListingsSearch.SortView)
+                    {
+                        case WhatYouNeed.Model.Enum.Enum_SortView.Grid:
+                        default:
+
+                            @*@Html.Partial("~/Views/Listing/_ListingGrid.cshtml", Model.ListingsSearch)*@
+                            <div class="row">
+                                @foreach (var item in Model.ListingsSearch.ListingsPageList)
+                                {
+                                    <div class="card-deck col-xs-2 col-sm-5 col-md-6 ">
+                                        @Html.Partial("~/Views/Listing/_ListingCard.cshtml", item)
+                                    </div>
+                                }
+                            </div>
+                            break;
+
+                        case WhatYouNeed.Model.Enum.Enum_SortView.List:
+                            @Html.Partial("~/Views/Listing/_ListingGridList.cshtml", Model.ListingsSearch)
+                            break;
+                        case WhatYouNeed.Model.Enum.Enum_SortView.Map:
+                            break;
+
+                    }
+
+                    <div class="card-header bdr-b">
+                        <div class="container-fluid">
+                            <div class=" col-md-12">
+                                <h5 class="pull-left mrg-t">
+                                    @string.Format("[[[Page {0} of {1}]]]", Model.ListingsSearch.ListingsPageList.PageCount < Model.ListingsSearch.PageNumber ? 0 : Model.ListingsSearch.PageNumber, Model.ListingsSearch.ListingsPageList.PageCount)
+                                </h5>
+                                @Html.PagedListPager(Model.ListingsSearch.ListingsPageList, (page) => { return Request.UrlReplace("PageNumber", page.ToString()); },
+                                new PagedListRenderOptions
+                                        {
+                                            ContainerDivClasses = new List<string>(new string[] { "pull-right" }),
+                                            DisplayPageCountAndCurrentLocation = false,
+                                            MaximumPageNumbersToDisplay = 5,
+                                            DisplayEllipsesWhenNotShowingAllPageNumbers = false
+                                        })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!-- ./ Main Content -->
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <!-- Include Roller JS -->
+    <script src="~/js/formstone/core.js"></script>
+    <script src="~/js/formstone/touch.js"></script>
+    <script src="~/js/formstone/transition.js"></script>
+    <script src="~/js/formstone/lightbox.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgB8z009mHSrPLaJUobfgmI1gTlk1aqyc&libraries=places"></script>
+    <script src="~/Scripts/TnTutils/GoogleMapsGeocode.js" type="text/javascript"></script>
+
+    <script>
+        $(".text-swap").on("click", function () {
+            var el = $(this);
+            el.text() == el.data("text-swap")
+                ? el.text(el.data("text-original"))
+                : el.text(el.data("text-swap"));
+        });
+    </script>
+
+    @*<script type="text/javascript">
+        $(".boxer").lightbox({
+            mobile: true
+        });
+    </script>*@
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            initializeMapCanvas();
+        });
+
+               $(".btnrating").on('click', (function (e) {
+
+            var previous_value = $("#Rating").val();
+
+            var selected_value = $(this).attr("data-attr");
+            $("#Rating").val(selected_value);
+
+            $(".selected-rating").empty();
+            $(".selected-rating").html(selected_value);
+
+            for (i = 1; i <= selected_value; ++i) {
+                $("#rating-star-" + i).toggleClass('btn-warning');
+                $("#rating-star-" + i).toggleClass('btn-default');
+            }
+
+            for (ix = 1; ix <= previous_value; ++ix) {
+                $("#rating-star-" + ix).toggleClass('btn-warning');
+                $("#rating-star-" + ix).toggleClass('btn-default');
+            }
+
+        }));
+
+        // met le rating dans le titre
+        for (i = 1; i <= @Model.ListingItem.ListingCurrent.Rating; ++i) {
+            $("#rating-star-Title-" + i).toggleClass('btn-warning');
+            $("#rating-star-Title-" + i).toggleClass('btn-default');
+        }
+
+    </script>
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+        // Initialize popover component
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+
+    </script>
+}
+

@@ -1,0 +1,4 @@
+﻿<MSDeploy.iisApp>
+  <iisApp path="Appli" />
+  <setacl path="Appli" setAclAccess="Modify" />
+</MSDeploy.iisApp>

@@ -1,0 +1,290 @@
+﻿@using Microsoft.Practices.Unity;
+@using Microsoft.Practices.Unity.Configuration;
+@using PagedList.Mvc;
+@using WhatYouNeed.Web.Extensions;
+
+@model WhatYouNeed.Web.Models.SearchListingModel
+
+@{
+    ViewBag.Title = "[[[Listings]]]";
+}
+
+@section Styles {
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <link href="~/Content/jsTree/themes/default/style.min.css" rel="stylesheet" />
+
+    <style>
+        #divLogoHautGauche {
+            float: left;
+            margin-left: 10px;
+            margin-top: 0px;
+            width: 150px;
+            height: 184px;
+            background-repeat: no-repeat;
+        }
+
+        #divPubHaut {
+            margin-left: 30px;
+            margin-top: 1px;
+            width: 800px;
+            height: 200px;
+        }
+    </style>
+}
+
+@helper DisplayBreadCrumb()
+{
+    if ((Model.CategoryID != 0) && (Model.CategoryID != -1))
+    {
+        var settings = CacheHelper.Settings;
+
+        <ol class="breadcrumb mrg-t">
+            <li class="active m-r-5" ><a href="@Url.Action("Index", "Home")">@settings.Name  &raquo; </a></li>
+
+            @for (int i = 0; i < Model.BreadCrumb.Count - 1; i++)
+            {
+                <li class="m-l-5" ><a href="@Url.Action("Search", "Home", new { CategoryID = Model.Categories[i].ID })">@Model.BreadCrumb[i].Name  &raquo; </a></li>
+            }
+
+            <li class="active m-l-10"> @Model.BreadCrumb.Last().Name</li>
+        </ol>
+    }
+}
+<div class="container-fluid body-content" style="background-color:#EAF4D3">
+
+    @DisplayBreadCrumb()
+
+    <div class="mrg-tb">
+        <div class="row">
+            @*<a href="#" id="testPub" onclick="ShowHidePub()">P</a>*@
+            <div class="col-sm-12 col-md-2 m-t-5 d-none d-md-inline">
+                <img src="@ImageHelper.GetCommunityImagePath("LogoTnTcom_150x184", "png"))" style="display: block;" />
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <div class="card border-success " id="divPubRegisterHaut">
+                    <img src="@ImageHelper.GetCommunityImagePubsPath("pub_Listings_Haut_800x200_Img1", "png"))" style="display: block;" pubHaut />
+                    @*@{
+                    for (int iH = 2; iH <= @ImageHelper.GetMaxNbforPub("pub_Index_Haut_800x200_Img"); iH++)
+                    {
+                        <img src="@ImageHelper.GetCommunityImagePubsPath("pub_Index_Haut_800x200_Img" + iH, "png")" style="display: none;" pubHaut />
+                    }
+                }*@
+
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="search-widget panel panel-default mt-5">
+                    <form method="get" action="@Url.Action("Search", "Home", new { })">
+                        <div class="panel-heading mt-2">
+                            <h4>[[[Refine Search]]]</h4>
+
+                        </div>
+                        <div class="panel-body mt-4">
+                            <fieldset>
+
+                                <div class="form-body" style="border-style:groove;overflow-y: auto; ">
+                                    <div id="jstreeCateg">  </div>
+                                    <input type="hidden" id="CategoryIDhidd" name="CategoryIDsSearch" value="@Model.CategoryIDsSearch" />
+                                </div>
+
+                                <br />
+                                <div class="form-group">
+                                    <h5>[[[Listing Type]]]</h5>
+                                    @foreach (var listingType in Model.ListingTypes)
+                                    {
+                                        <div class="row ml-5">
+                                            <div class="col-xs-12">
+                                                @{var listingTypeCheckBoxID = "ListingTypeID_" + listingType.ID; }
+                                                <input type="radio" id="@listingTypeCheckBoxID" name="ListingTypeID" value="@listingType.ID" @( Model.ListingTypeID.Contains(listingType.ID) ? "checked" : "") onchange="this.form.submit()" />
+                                                <label for="@listingTypeCheckBoxID">@listingType.Name</label>
+                                            </div>
+                                        </div>
+
+                                    }
+                                </div>
+
+                                <h5>[[[Localization]]]</h5>
+                                <div class="form-body" style="border-style:groove;overflow-y: auto;">
+                                    <div id="jstreeLoc"> </div>
+                                    <input type="hidden" id="LocationRefIDhidd" name="LocationRefIDsSearch" value="@Model.LocationRefIDsSearch" />
+                                </div>
+                                <div class="form-group mt-2">
+                                    <input type="text" class="form-control input-lg" placeholder="[[[Enter Location detail]]]" id="Location" name="Location" value="@Model.Location">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <h5>[[[Price]]]</h5>
+                                    <div class="row ml-5">
+                                        <div class="col-xs-6 range-from"><input type="number" class="form-control" placeholder="[[[From]]]" id="PriceFrom" name="PriceFrom" value="@Model.PriceFrom"></div>
+                                        <div class="col-xs-6 range-to"><input type="number" class="form-control" placeholder="[[[To]]]" id="PriceTo" name="PriceTo" value="@Model.PriceTo"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <h5>[[[Search Text]]]</h5>
+                                    <input type="search" class="form-control" placeholder="[[[Search text]]]" id="SearchText" name="SearchText" value="@Model.SearchText">
+                                </div>
+
+                                <input type="checkbox" id="PhotoOnly" name="PhotoOnly" value="true" @( Model.PhotoOnly ? "checked" : "") />
+                                <label for="PhotoOnly">[[[Only show listings with photos]]]</label>
+
+                                @Html.HiddenFor(x => x.SortView)
+                            </fieldset>
+
+                        </div>
+                        <div class="panel-footer">
+                            <button type="submit" class="btn btn-success btn-lg w-100 " href="">[[[Apply]]]</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-7 section-title mt-5">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="form-inline pull-right">
+                            <div class="form-group">
+                                <div class="btn-group" role="group" aria-label="Sort View">
+                                    <a class="btn btn-primary" href="@Request.UrlReplace("SortView", WhatYouNeed.Model.Enum.Enum_SortView.Grid.ToString())"><i class="fa fa-th"></i> [[[Grid]]]</a>
+                                    <a class="btn btn-primary" href="@Request.UrlReplace("SortView", WhatYouNeed.Model.Enum.Enum_SortView.List.ToString())"><i class="fa fa-th-list"></i> [[[List]]]</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>
+                            [[[Listings]]]
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="row m-b-10">
+                    <div class="container-fluid body-content">
+                        @switch (Model.SortView)
+                        {
+                            case WhatYouNeed.Model.Enum.Enum_SortView.Grid:
+                            default:
+
+                                @Html.Partial("~/Views/Listing/_ListingGrid.cshtml", Model)
+                                break;
+
+                            case WhatYouNeed.Model.Enum.Enum_SortView.List:
+                                @Html.Partial("~/Views/Listing/_ListingGridList.cshtml", Model)
+                                break;
+                            case WhatYouNeed.Model.Enum.Enum_SortView.Map:
+                                break;
+
+                        }
+                    </div>
+                </div>
+
+                <div class="panel-header bdr-b">
+                    <div class="container-fluid">
+                        <div class=" col-md-12">
+                            <h5 class="pull-left mrg-t">
+                                @string.Format("[[[Page {0} of {1}]]]", Model.ListingsPageList.PageCount < Model.PageNumber ? 0 : Model.PageNumber, Model.ListingsPageList.PageCount)
+                            </h5>
+                            @Html.PagedListPager(Model.ListingsPageList, (page) => { return Request.UrlReplace("PageNumber", page.ToString()); },
+                            new PagedListRenderOptions
+                                 {
+                                     ContainerDivClasses = new List<string>(new string[] { "pull-right" }),
+                                     DisplayPageCountAndCurrentLocation = false,
+                                     MaximumPageNumbersToDisplay = 5,
+                                     DisplayEllipsesWhenNotShowingAllPageNumbers = false
+                                 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@section Scripts {
+
+    <script>
+
+        $(function () {
+            $('#jstreeCateg').jstree({
+                'core': {
+                    "multiple": true,
+                    "check_callback": false,
+                    'data': {
+                        'url': '/jsTree3/GetJsTree3CategData/'  ,
+                        "data": function (node) {
+                            return {
+                                id  : "@Model.CategoryID",
+                                ids : "@Model.CategoryIDsSearch" };
+                        },
+                        'dataType': 'json',
+                    },
+                    "themes": {
+                        "responsive": true,
+                        "variant": 'larg',
+                        "stripes": false,
+                        "icons": false,
+                        "ellipsis": false,
+                        "dots": false
+                    },
+                    "checkbox": {
+                        "visible": true,
+                        "two_state": false
+                    }
+                },
+                "plugins": [ "checkbox"]
+            });
+
+            $('#jstreeCateg').on("changed.jstree", function (e, data) {
+                if (data != null && data.selected != null && data.selected.length > 0) {
+                    document.getElementById('CategoryIDhidd').value = data.selected.join(";");
+                }
+                else
+                    document.getElementById('CategoryIDhidd').value = null;
+            });
+
+        });
+
+        $(function () {
+            $('#jstreeLoc').jstree({
+                'core': {
+                    "multiple": true,
+                    "check_callback": false,
+                    'data': {
+                        'url': '/jsTree3/GetJsTree3LocData/'  ,
+                        "data": function (node) {
+                            return {
+                                id  : "@Model.LocationRefID",
+                                ids: "@Model.LocationRefIDsSearch"
+                            };
+                        },
+                        'dataType': 'json',
+                    },
+                    "themes": {
+                        "responsive": true,
+                        "variant": 'larg',
+                        "stripes": false,
+                        "icons": false,
+                        "ellipsis": false,
+                        "dots": false
+                    },
+                    "checkbox": {
+                        "visible": true,
+                        "two_state": false
+                    }
+                },
+                "plugins": [ "checkbox"]
+            });
+
+            $('#jstreeLoc').on("changed.jstree", function (e, data) {
+                if (data != null && data.selected != null && data.selected.length > 0) {
+                    document.getElementById('LocationRefIDhidd').value = data.selected.join(";");
+                }
+                else
+                    document.getElementById('LocationRefIDhidd').value = null;
+            });
+
+        });
+    </script>
+
+
+}

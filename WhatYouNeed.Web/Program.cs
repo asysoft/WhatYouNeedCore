@@ -19,6 +19,8 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddRazorPages()
     .AddMicrosoftIdentityUI();
 
+builder.Services.AddMvcCore();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

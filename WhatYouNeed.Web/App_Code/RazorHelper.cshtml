@@ -1,0 +1,22 @@
+﻿@using WhatYouNeed.Core;
+@using WhatYouNeed.Core.Plugins;
+
+
+@helper DisplayYesNo(bool value)
+{
+    var text = value ? "[[[Yes]]]" : "[[[No]]]";
+
+    <span>@text</span>
+}
+
+
+@functions {
+    // Check if payment method is setup on the platform
+    public static bool IsPaymentSupport()
+    {
+        // ASY
+        //var descriptors = ContainerManager.GetConfiguredContainer().Resolve<IPluginFinder>().GetPluginDescriptors<IHookPlugin>(LoadPluginsMode.InstalledOnly, "Payment").Where(x => x.Enabled);
+        //return descriptors.Count() > 0;
+        return false;
+    }
+} 
