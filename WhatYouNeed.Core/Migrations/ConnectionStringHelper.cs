@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -11,6 +12,7 @@ namespace Appli.Core.Migrations
     //http://www.codeproject.com/Articles/118532/Saving-Connection-Strings-to-app-config
     public class ConnectionStringHelper
     {
+
         /// <summary>
         /// Adds a connection string settings entry & saves it to the associated config file.
         ///
@@ -44,16 +46,16 @@ namespace Appli.Core.Migrations
             Thread.Sleep(3000);
 
             // This is needed. Otherwise the updates do not show up in ConfigurationManager
-            ConfigurationManager.RefreshSection("connectionStrings");
+            System.Configuration.ConfigurationManager.RefreshSection("connectionStrings");
         }
 
         public static string GetDefaultConnectionString()
         {
-            var configuration = WebConfigurationManager.OpenWebConfiguration("~");
+            //var configuration = WebConfigurationManager.OpenWebConfiguration("~");          
+            //var connectionString = configuration.ConnectionStrings.ConnectionStrings["DefaultConnection"];
 
-            var connectionString = configuration.ConnectionStrings.ConnectionStrings["DefaultConnection"];
-
-            return connectionString == null ? string.Empty : connectionString.ConnectionString;
+            //return connectionString == null ? string.Empty : connectionString.ConnectionString;
+            return "Testconfiguration_CnxString";
         }
 
         public static bool IsDatabaseInstalled()

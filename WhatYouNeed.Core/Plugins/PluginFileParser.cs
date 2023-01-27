@@ -48,20 +48,20 @@ namespace Appli.Core.Plugins
 
         public static void SavePluginDescriptionFile(PluginDescriptor plugin)
         {
-            if (plugin == null)
-                throw new ArgumentException("plugin");
+            //if (plugin == null)
+            //    throw new ArgumentException("plugin");
 
-            //get the Description.txt file path
-            if (plugin.OriginalAssemblyFile == null)
-                throw new Exception(string.Format("Cannot load original assembly path for {0} plugin.", plugin.SystemName));
-            var filePath = Path.Combine(plugin.OriginalAssemblyFile.Directory.FullName, PluginManager.ManifestJson);
-            if (!File.Exists(filePath))
-                throw new Exception(string.Format("Description file for {0} plugin does not exist. {1}", plugin.SystemName, filePath));
+            ////get the Description.txt file path
+            //if (plugin.OriginalAssemblyFile == null)
+            //    throw new Exception(string.Format("Cannot load original assembly path for {0} plugin.", plugin.SystemName));
+            //var filePath = Path.Combine(plugin.OriginalAssemblyFile.Directory.FullName, PluginManager.ManifestJson);
+            //if (!File.Exists(filePath))
+            //    throw new Exception(string.Format("Description file for {0} plugin does not exist. {1}", plugin.SystemName, filePath));
 
-            string pluginJson = JsonConvert.SerializeObject(plugin);
+            //string pluginJson = JsonConvert.SerializeObject(plugin);
 
-            //save the file
-            File.WriteAllText(filePath, pluginJson);
+            ////save the file
+            //File.WriteAllText(filePath, pluginJson);
         }
     }
 }
