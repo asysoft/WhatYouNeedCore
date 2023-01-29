@@ -6,10 +6,14 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
+//using Microsoft.AspNetCore.Identity.EntityFramework;
+//using Microsoft.AspNetCore.Identity.Owin;
+//using Microsoft.Owin;
+//using Microsoft.Owin.Security;
 using WhatYouNeed.Web.Models;
 
 namespace WhatYouNeed.Web
@@ -33,9 +37,9 @@ namespace WhatYouNeed.Web
     }
 
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
-    public class ApplicationUserManager : UserManager<ApplicationUser>
+    public class ApplicationUserManager : Microsoft.AspNetCore.Identity.UserManager<ApplicationUser>
     {
-        public ApplicationUserManager(IUserStore<ApplicationUser> store)
+        public ApplicationUserManager(Microsoft.AspNetCore.Identity.IUserStore<ApplicationUser> store)
             : base(store)
         {
         }

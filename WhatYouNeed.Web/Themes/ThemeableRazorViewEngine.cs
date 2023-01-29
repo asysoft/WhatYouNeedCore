@@ -1,12 +1,15 @@
-﻿using WhatYouNeed.Service;
+﻿using Appli.Service;
 using WhatYouNeed.Web.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+
+//using System.Web.Routing;
 
 namespace WhatYouNeed.Web.Themes
 {

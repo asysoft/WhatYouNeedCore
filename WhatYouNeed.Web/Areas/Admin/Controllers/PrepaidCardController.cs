@@ -1,5 +1,5 @@
-﻿using WhatYouNeed.Model.Models;
-using WhatYouNeed.Service;
+﻿using Appli.Model.Models;
+using Appli.Service;
 using WhatYouNeed.Web.Areas.Admin.Models;
 using WhatYouNeed.Web.Models;
 using WhatYouNeed.Web.Models.Grids;
@@ -10,9 +10,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Mvc;
-using TnTPrepaidCard.Lib;
-using TnTPrepaidCard.Lib.Model;
+using Microsoft.AspNetCore.Mvc;
+using Appli.PrepaidCards.Lib;
+using Appli.PrepaidCards.Lib.Model;
 
 namespace WhatYouNeed.Web.Areas.Admin.Controllers
 {

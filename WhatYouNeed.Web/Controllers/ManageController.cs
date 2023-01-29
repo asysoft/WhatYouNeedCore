@@ -2,12 +2,12 @@
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+//using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using WhatYouNeed.Web.Models;
-using WhatYouNeed.Model.Models;
+using Appli.Model.Models;
 using WhatYouNeed.Web.Utilities;
 using WhatYouNeed.Service;
 using Repository.Pattern.UnitOfWork;
@@ -16,11 +16,12 @@ using System.Drawing;
 using ImageProcessor;
 using System.IO;
 using System.Collections.Generic;
-using WhatYouNeed.Model.Enum;
+using Appli.Model.Enum;
 using WhatYouNeed.Web.Models.Grids;
 using RestSharp;
 using PagedList;
-using WhatYouNeed.Core.Web;
+using Appli.Core.Web;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WhatYouNeed.Web.Controllers
 {

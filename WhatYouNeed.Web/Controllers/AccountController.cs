@@ -4,28 +4,29 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using WhatYouNeed.Web.Models;
 using WhatYouNeed.Web.Utilities;
-using WhatYouNeed.Service;
-using WhatYouNeed.Service.Models;
+using Appli.Service;
+using Appli.Service.Models;
 using i18n;
-using WhatYouNeed.Model.Enum;
-using WhatYouNeed.Model.Models;
+using Appli.Model.Enum;
+using Appli.Model.Models;
 using System.Collections.Generic;
 using Repository.Pattern.UnitOfWork;
 using ImageProcessor.Imaging.Formats;
 using System.Drawing;
 using ImageProcessor;
 using System.IO;
-using TnTPrepaidCard.Lib;
+using Appli.PrepaidCards.Lib;
 using System.Threading;
 
 using System.Text.RegularExpressions;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WhatYouNeed.Web.Controllers
 {

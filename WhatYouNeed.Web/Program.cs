@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
+using System.Data.SqlClient;
+using WhatYouNeed.Web.ActionFilters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +21,19 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddRazorPages()
     .AddMicrosoftIdentityUI();
 
-builder.Services.AddMvcCore();
+var authorizepolicy = new AuthorizationPolicyBuilder()
+        .RequireAuthenticatedUser()
+        .RequireRole("Admin", "SuperUser")
+        .Build();
+
+builder.Services.AddMvcCore(options =>
+{
+    //options.Filters.Add(new HandleErrorAttribute());
+    options.Filters.Add(new ElmahErrorMVCAttribute());
+    options.Filters.Add((Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata)authorizepolicy);
+});
+
+builder.Services.AddMemoryCache();
 
 var app = builder.Build();
 
@@ -31,6 +45,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+//app.UseMiddleware<ErrorHandlerMiddleware>();
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -40,5 +56,25 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 app.MapControllers();
+
+app.MapControllerRoute(
+    name: "Install",
+    pattern: "{area:exists}/{controller=Install}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "Admin",
+    pattern: "{area:exists}/{controller=Manage}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "Admin_default",
+    pattern: "{area:exists}/{controller=Admin_default}/{action}/{id?}");
+
+app.MapControllerRoute(
+    name: "Pro_defaultExt",
+    pattern: "{area:exists}/{controller=UserPro}/{action=Index}/{id?}");
+
+ //app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

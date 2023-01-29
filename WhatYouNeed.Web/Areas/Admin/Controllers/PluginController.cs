@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+//using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using WhatYouNeed.Service;
+using Appli.Service;
 using System.Threading.Tasks;
 using WhatYouNeed.Model.Models;
 using Repository.Pattern.UnitOfWork;
@@ -20,15 +20,15 @@ using System.Drawing;
 using ImageProcessor;
 using System.IO;
 using System.Text;
-using WhatYouNeed.Model.Enum;
+using Appli.Model.Enum;
 using RestSharp;
 using WhatYouNeed.Web.Areas.Admin.Models;
 using Postal;
 using System.Net.Mail;
 using System.Net;
-using WhatYouNeed.Service.Models;
-using WhatYouNeed.Core.Plugins;
-using WhatYouNeed.Core.Web;
+using Appli.Service.Models;
+using Appli.Core.Plugins;
+using Appli.Core.Web;
 
 namespace WhatYouNeed.Web.Areas.Admin.Controllers
 {

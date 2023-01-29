@@ -1,13 +1,14 @@
 ﻿using Appli.Core.Controllers;
 using Appli.Model.Models;
 using Appli.Service.Models;
-using Microsoft.Practices.Unity;
+using Microsoft.Extensions.Caching.Memory;
+//using Microsoft.Practices.Unity;
 using Repository.Pattern.Repositories;
 using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Caching;
+//using System.Runtime.Caching;
 using System.Text;
 using System.Threading.Tasks;
 using Unity;
@@ -16,7 +17,13 @@ namespace Appli.Service
 {
     public class DataCacheService
     {
-        public MemoryCache MainCache { get; private set; }
+        //public MemoryCache MainCache { get; private set; }
+        private readonly IMemoryCache _memoryCache;
+
+        public DataCacheService(IMemoryCache memoryCache)
+        {
+            _memoryCache = memoryCache;
+        }
 
         private ISettingService SettingService
         {
@@ -90,7 +97,9 @@ namespace Appli.Service
         {
             _container = container;
 
-            MainCache = new MemoryCache("MainCache");
+            //MainCache = new MemoryCache("MainCache");
+            //MainCache = new MemoryCache(new MemoryCacheOptions() );
+
             GetCachedItem(CacheKeys.Settings);
             GetCachedItem(CacheKeys.SettingDictionary);
             GetCachedItem(CacheKeys.Categories);
@@ -106,18 +115,23 @@ namespace Appli.Service
 
         }
 
-        public void UpdateCache(CacheKeys CacheKeyName, object CacheItem, int priority = (int)CacheItemPriority.NotRemovable)
+        public void UpdateCache(CacheKeys CacheKeyName, object CacheItem, int priority = (int)CacheItemPriority.NeverRemove )
         {
             lock (_lock)
             {
-                var policy = new CacheItemPolicy();
-                policy.Priority = (CacheItemPriority)priority;
+                //var policy = new CacheItemPolicy();
+                MemoryCacheEntryOptions MemCacheEntryOption = new MemoryCacheEntryOptions()
+                .SetPriority((CacheItemPriority)priority)
+                .SetAbsoluteExpiration(DateTimeOffset.Now.AddSeconds(10.00));
+
+                //policy.Priority = (CacheItemPriority)priority;
 
                 //ASY 
                 //policy.AbsoluteExpiration = DateTimeOffset.Now.AddSeconds(10.00);
 
                 // Add inside cache 
-                MainCache.Set(CacheKeyName.ToString(), CacheItem, policy);
+                //MainCache.Set(CacheKeyName.ToString(), CacheItem, policy);
+                _memoryCache.Set(CacheKeyName.ToString(), CacheItem, MemCacheEntryOption);
             }
         }
 
@@ -125,7 +139,9 @@ namespace Appli.Service
         {
             lock (_lock)
             {
-                if (!MainCache.Contains(CacheKeyName.ToString()))
+
+                //if (!MainCache.Contains(CacheKeyName.ToString()))
+                if (!_memoryCache.TryGetValue(CacheKeyName.ToString(), out var CacheKeyVal ) )
                 {
                     switch (CacheKeyName)
                     {
@@ -185,7 +201,8 @@ namespace Appli.Service
                     }
                 };
 
-                return MainCache[CacheKeyName.ToString()] as Object;
+                // return MainCache[CacheKeyName.ToString()] as Object;
+                return _memoryCache.Get(CacheKeyVal); // [CacheKeyName.ToString()] as Object;
             }
         }
 
@@ -223,9 +240,11 @@ namespace Appli.Service
 
         public void RemoveCachedItem(CacheKeys CacheKeyName)
         {
-            if (MainCache.Contains(CacheKeyName.ToString()))
+            //if (MainCache.Contains(CacheKeyName.ToString()))
+            if (_memoryCache.TryGetValue (CacheKeyName.ToString(), out var KeyVal))
             {
-                MainCache.Remove(CacheKeyName.ToString());
+                //MainCache.Remove(CacheKeyName.ToString());
+                _memoryCache.Remove(CacheKeyName.ToString());
             }
         }
 

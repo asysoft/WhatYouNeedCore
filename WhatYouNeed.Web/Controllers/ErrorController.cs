@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WhatYouNeed.Web.Controllers
 {
@@ -19,7 +19,7 @@ namespace WhatYouNeed.Web.Controllers
             return View("Error");
         }
 
-        public ActionResult Error(System.Web.Mvc.HandleErrorInfo errorInfo)
+        public ActionResult Error(Microsoft.AspNetCore.Mvc.HandleErrorInfo errorInfo)
         {            
             if (Request.IsAjaxRequest())
             {

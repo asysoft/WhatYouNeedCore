@@ -7,7 +7,7 @@ using Repository.Pattern.DataContext;
 using Repository.Pattern.Ef6;
 using Repository.Pattern.Repositories;
 using Repository.Pattern.UnitOfWork;
-//using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Unity;
 using Unity.Lifetime;
 //using Unity.Mvc5;
