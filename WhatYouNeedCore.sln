@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatYouNeed.Web", "WhatYouNeed.Web\WhatYouNeed.Web.csproj", "{D3C999A3-D7B5-414E-85BC-3E00F6BA96A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatYouNeed.Web", "WhatYouNeed.Web\WhatYouNeed.Web.csproj", "{D3C999A3-D7B5-414E-85BC-3E00F6BA96A7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appli.Core", "WhatYouNeed.Core\Appli.Core.csproj", "{AE0C0229-908B-416D-BEA9-E397872DECF3}"
 EndProject
@@ -28,6 +28,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appli.PrepaidCards.Lib", "Appli.PrepaidCards.Lib\Appli.PrepaidCards.Lib.csproj", "{8CDDF478-EF28-45C4-8313-1CEE16FCAAA6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appli.PubManager", "Appli.PubManager\Appli.PubManager.csproj", "{2814B15A-ABBF-4454-AC07-4B355DA83DD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatYouNeed.Database", "WhatYouNeed.Database\WhatYouNeed.Database.csproj", "{2D65A485-5A8B-45E3-9A30-62F685327A3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{2814B15A-ABBF-4454-AC07-4B355DA83DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2814B15A-ABBF-4454-AC07-4B355DA83DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2814B15A-ABBF-4454-AC07-4B355DA83DD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D65A485-5A8B-45E3-9A30-62F685327A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D65A485-5A8B-45E3-9A30-62F685327A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D65A485-5A8B-45E3-9A30-62F685327A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D65A485-5A8B-45E3-9A30-62F685327A3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

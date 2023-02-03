@@ -6,8 +6,19 @@ using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
 using System.Data.SqlClient;
 using WhatYouNeed.Web.ActionFilters;
+using WhatYouNeed.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
 
 // Add services to the container.
 builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
@@ -48,6 +59,10 @@ if (!app.Environment.IsDevelopment())
 //app.UseMiddleware<ErrorHandlerMiddleware>();
 
 app.UseHttpsRedirection();
+
+// ?
+app.UseWebOptimizer();
+
 app.UseStaticFiles();
 
 app.UseRouting();

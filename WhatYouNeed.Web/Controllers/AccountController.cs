@@ -22,7 +22,7 @@ using System.Drawing;
 using ImageProcessor;
 using System.IO;
 using Appli.PrepaidCards.Lib;
-using System.Threading;
+
 
 using System.Text.RegularExpressions;
 using System.Text;

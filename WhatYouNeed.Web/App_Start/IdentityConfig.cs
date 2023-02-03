@@ -5,11 +5,12 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Owin;
-using Microsoft.Owin.Security;
+
+//using Microsoft.AspNet.Identity.Owin;
+//using Microsoft.Owin;
+//using Microsoft.Owin.Security;
+
 //using Microsoft.AspNetCore.Identity.EntityFramework;
 //using Microsoft.AspNetCore.Identity.Owin;
 //using Microsoft.Owin;
